@@ -89,7 +89,7 @@ class LogStash::Outputs::Seq < LogStash::Outputs::Base
     end
 
     request.on_failure do |exception|
-      log_failure("Could not fetch URL",
+      log_failure("Could not submit POST request.",
         :url => url,
         :method => @http_method,
         :body => body,
