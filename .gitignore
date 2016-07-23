@@ -3,3 +3,6 @@ Gemfile.lock
 Gemfile.bak
 .bundle
 vendor
+
+# RubyMine
+.idea/
