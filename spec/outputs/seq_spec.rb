@@ -4,26 +4,26 @@ require "logstash/outputs/seq"
 require "logstash/codecs/plain"
 require "logstash/event"
 
-# RSpec.configure do |config|
-
-  # RSpec automatically cleans stuff out of backtraces;
-  # sometimes this is annoying when trying to debug something e.g. a gem
-  # if ENV['FULLBACKTRACES'] == 'true'
-    # config.backtrace_exclusion_patterns = []
-  # end
-
-  # some other configuration here
-
-# end
-
 describe LogStash::Outputs::Seq do
   let(:sample_event) do
     return LogStash::Event.new({
       "host" => "localhost",
-      "message" => "Hello"
+      "message" => "Hello Diddly"
     })
   end
-  let(:output) { LogStash::Outputs::Seq.new }
+  let(:sample_events) do
+    return [
+      LogStash::Event.new({
+        "host" => "localhost",
+        "message" => "Hello World"
+      }),
+      LogStash::Event.new({
+        "host" => "localhost",
+        "message" => "Goodbye Moon"
+      }) 
+    ]
+  end
+  let(:output) { LogStash::Outputs::Seq.new({"url" => "http://localhost:5432/"}) }
 
   before do
     output.register
@@ -33,9 +33,19 @@ describe LogStash::Outputs::Seq do
     subject { output.receive(sample_event) }
 
     it "returns a string" do
-      puts "Sample Event: #{sample_event.to_s}"
+      puts "Sample Event: #{sample_event.to_json}"
 
       expect(subject).to eq("Event received")
+    end
+  end
+
+  describe "receive messages" do
+    subject { output.multi_receive(sample_events) }
+
+    it "returns a string" do
+      puts "Sample Events: #{sample_events.to_json}"
+
+      expect(subject).to eq("2 events received")
     end
   end
 end
