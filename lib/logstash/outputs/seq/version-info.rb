@@ -1,6 +1,8 @@
+require 'logstash/outputs/base'
+
 module LogStash
   module Outputs
-    module Seq
+    class Seq < LogStash::Outputs::Base
       VERSION = '0.0.2'
     end
   end
