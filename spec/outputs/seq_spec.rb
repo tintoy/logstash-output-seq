@@ -1,11 +1,12 @@
 # encoding: utf-8
 require 'logstash/devutils/rspec/spec_helper'
-require 'logstash/outputs/seq'
 require 'logstash/codecs/plain'
 require 'logstash/event'
 
 require "jrjackson"
 require "sinatra"
+
+require "spec/spec_helper"
 
 describe LogStash::Outputs::Seq do
   # Output and its configuration
