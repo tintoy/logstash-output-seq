@@ -2,9 +2,7 @@
 
 [![Travis Build Status](https://travis-ci.org/tintoy/logstash-output-seq.svg)](https://travis-ci.org/tintoy/logstash-output-seq)
 [![Gem Version](https://badge.fury.io/rb/logstash-output-seq.svg)](https://badge.fury.io/rb/logstash-output-seq)
-
-Coverage (master):           [![Coverage Status (master)](https://coveralls.io/repos/github/tintoy/logstash-output-seq/badge.svg?branch=master)](https://coveralls.io/github/tintoy/logstash-output-seq?branch=master)
-Coverage (development/v1.0): [![Coverage Status (development/v1.0)](https://coveralls.io/repos/github/tintoy/logstash-output-seq/badge.svg?branch=development%2Fv1.0)](https://coveralls.io/github/tintoy/logstash-output-seq?branch=development%2Fv1.0)
+[![Coverage Status (master)](https://coveralls.io/repos/github/tintoy/logstash-output-seq/badge.svg?branch=master)](https://coveralls.io/github/tintoy/logstash-output-seq?branch=master)
 
 This is an output plugin for [Logstash](https://github.com/elastic/logstash) that publishes events to [Seq](https://getseq.net/).
 
