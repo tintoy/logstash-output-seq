@@ -1,9 +1,10 @@
 # encoding: utf-8
-require 'json/ext'
 require 'logstash/outputs/base'
 require 'logstash/plugin_mixins/http_client'
 require 'logstash/json'
 require 'logstash/namespace'
+
+require 'jrjackson'
 
 # An output that sends events to Seq.
 class LogStash::Outputs::Seq < LogStash::Outputs::Base
@@ -70,7 +71,7 @@ class LogStash::Outputs::Seq < LogStash::Outputs::Base
 
     request = client.post(@url, {
       headers: @default_headers,
-      body:    payload.to_json,
+      body:    JrJackson::Json.dump(payload),
       async:   true
     })
 

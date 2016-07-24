@@ -4,7 +4,7 @@ require 'logstash/outputs/seq'
 require 'logstash/codecs/plain'
 require 'logstash/event'
 
-require "json"
+require "jrjackson"
 require "sinatra"
 
 describe LogStash::Outputs::Seq do
@@ -23,7 +23,7 @@ describe LogStash::Outputs::Seq do
   let(:last_request) { TestApp.last_request }
   let(:request_body) { last_request.body.read }
   let(:request_content_type) { last_request ? last_request.env["CONTENT_TYPE"] : nil }
-  let(:posted_events) { JSON.parse(request_body) }
+  let(:posted_events) { JrJackson::Json.parse(request_body) }
 
   # Sample events
   let(:sample_event) {
