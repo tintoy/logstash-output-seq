@@ -28,12 +28,12 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "logstash-mixin-http_client", ">= 2.2.4", "< 3.0.0"
   spec.add_runtime_dependency "logstash-codec-plain"
 
-  spec.add_development_dependency "coveralls"
+  spec.add_development_dependency "coveralls", "~> 0.8"
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "logstash-devutils", "~> 0.0.15"
   spec.add_development_dependency "pry", "~> 0.10"
   spec.add_development_dependency "rake", "~> 11.2"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "sinatra"
-  spec.add_development_dependency "webrick"
+  spec.add_development_dependency "sinatra", "~> 1.4"
+  spec.add_development_dependency "webrick", "~> 1.3"
 end
