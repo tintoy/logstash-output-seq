@@ -23,6 +23,10 @@ The plugin has the following configuration options:
 * `api_key` (Optional) - The Seq API key (if any) to use for authentication.
 * Any parameters from the Logstash HttpClient mix-in (e.g. configuring SSL behaviour, etc).
 
+### Docker
+
+There is also a [docker image](https://hub.docker.com/r/tintoy/logstash-output-seq/) available that has this plugin preinstalled.
+
 ## Developing
 
 [Developing](DEVELOPING.md)
