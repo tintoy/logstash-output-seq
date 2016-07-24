@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "logstash-core", ">= 2.3.4", "< 3.0.0"
   s.add_runtime_dependency "logstash-mixin-http_client", ">= 2.2.4", "< 3.0.0"
   s.add_runtime_dependency "logstash-codec-plain", "~> 2.0"
+  s.add_runtime_dependency "jruby-openssl", "= 0.9.13"
 
   s.add_development_dependency "logstash-devutils", "~> 0.0"
   s.add_development_dependency "sinatra", "~> 1.4"
