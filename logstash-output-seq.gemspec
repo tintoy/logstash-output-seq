@@ -1,10 +1,6 @@
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'logstash/outputs/seq/version-info'
-
 Gem::Specification.new do |s|
   s.name          = 'logstash-output-seq'
-  s.version       = LogStash::Outputs::Seq::VERSION
+  s.version       = '0.0.2'
   s.licenses      = ["MIT"]
   s.summary       = "This plugin outputs log entries to Seq (https://getseq.net)."
   s.description   = "This gem is a Logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/logstash-plugin install gemname. This gem is not a stand-alone program"
@@ -24,10 +20,9 @@ Gem::Specification.new do |s|
   # Gem dependencies
   s.add_runtime_dependency "logstash-core", ">= 2.3.4", "< 3.0.0"
   s.add_runtime_dependency "logstash-mixin-http_client", ">= 2.2.4", "< 3.0.0"
-  s.add_runtime_dependency "logstash-codec-plain", "~> 2.0"
-  s.add_runtime_dependency "jruby-openssl", "= 0.9.13"
+  s.add_runtime_dependency "logstash-codec-plain"
 
-  s.add_development_dependency "logstash-devutils", "~> 0.0"
-  s.add_development_dependency "sinatra", "~> 1.4"
-  s.add_development_dependency "webrick", "~> 1.3"
+  s.add_development_dependency "logstash-devutils", "~> 0.0.15"
+  s.add_development_dependency "sinatra"
+  s.add_development_dependency "webrick"
 end
