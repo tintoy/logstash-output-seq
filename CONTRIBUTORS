@@ -2,7 +2,8 @@ The following is a list of people who have contributed ideas, code, bug
 reports, or in general have helped the Seq plugin for Logstash along its way.
 
 Contributors:
-* Adam Friedman (tintoy)
+* Adam Friedman ([@tintoy](https://github.com/tintoy))
+* [@mjnorman](https://github.com/mjnorman)
 
 Note: If you've sent us patches, bug reports, or otherwise contributed to
 Logstash, and you aren't on the list above and want to be, please let us know

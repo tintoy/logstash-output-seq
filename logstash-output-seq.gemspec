@@ -15,23 +15,25 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/tintoy/logstash-output-seq"
   spec.require_paths = ["lib"]
 
+  spec.require_paths = ["lib"]
+
   # Files
-  spec.files = Dir['lib/**/*','spec/**/*','vendor/**/*','*.gemspec','*.md','CONTRIBUTORS','Gemfile','LICENSE']
+  spec.files = Dir['lib/**/*','spec/**/*','vendor/**/*','*.gemspec','*.md','CONTRIBUTORS','Gemfile','LICENSE','NOTICE.TXT']
    # Tests
   spec.test_files = spec.files.grep(%r{^(test|spec|features)/})
 
   # Special flag to let us know this is actually a logstash plugin
   spec.metadata = { "logstash_plugin" => "true", "logstash_group" => "output" }
 
-  # Gem dependencies
-  spec.add_runtime_dependency "logstash-core", ">= 2.3.4", "<= 6"
-  spec.add_runtime_dependency "logstash-mixin-http_client", ">= 2.2.4", "~> 6"
-  spec.add_runtime_dependency "logstash-core-plugin-api", ">= 2.1.28", "<= 2.99"
+  # Dependencies
+  spec.add_runtime_dependency "logstash-core-plugin-api", ">= 1.60", "<= 2.99"
   spec.add_runtime_dependency "logstash-codec-plain"
+  spec.add_runtime_dependency "logstash-mixin-http_client"
 
+  # Development dependencies
+  spec.add_development_dependency "logstash-devutils"
   spec.add_development_dependency "coveralls", "~> 0.8"
   spec.add_development_dependency "bundler", "~> 1.12"
-  spec.add_development_dependency "logstash-devutils", "~> 0.0.15"
   spec.add_development_dependency "pry", "~> 0.10"
   spec.add_development_dependency "rake", "~> 11.2"
   spec.add_development_dependency "rspec", "~> 3.0"

@@ -119,7 +119,7 @@ class LogStash::Outputs::Seq < LogStash::Outputs::Base
         :Properties => props
     }
 
-    event.instance_variable_get(:@data).each do |property, value|
+    event.to_hash.each do |property, value|
       props[property] = value unless @@ignore_properties.has_key? property
     end
 
