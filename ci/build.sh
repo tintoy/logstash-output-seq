@@ -8,6 +8,7 @@
 ########################################################
 set -e
 
+echo ""
 echo "Starting build process in: `pwd`"
 source ./ci/setup.sh
 
@@ -20,3 +21,4 @@ else
     bundle exec rake vendor
     bundle exec rspec spec
 fi
+echo ""

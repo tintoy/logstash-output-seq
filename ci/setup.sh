@@ -6,6 +6,8 @@
 # AUTOMATICALLY GENERATED! DO NOT EDIT
 #
 ########################################################
+
+echo ""
 set -e
 if [ "$LOGSTASH_BRANCH" ]; then
     echo "Building plugin using Logstash source"
@@ -25,3 +27,5 @@ if [ "$LOGSTASH_BRANCH" ]; then
 else
     echo "Building plugin using released gems on rubygems"
 fi
+
+echo ""
