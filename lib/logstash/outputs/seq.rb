@@ -110,16 +110,16 @@ class LogStash::Outputs::Seq < LogStash::Outputs::Base
   private
   def to_seq_payload(event)
     props = {
-        '@Version' => event['@version']
+        '@Version' => event.get('@version')
     }
     payload = {
-        :Timestamp => event['@timestamp'],
+        :Timestamp => event.get('@timestamp'),
         :Level => get_level(event),
-        :MessageTemplate => event['message'],
+        :MessageTemplate => event.get('message'),
         :Properties => props
     }
 
-    event.instance_variable_get(:@data).each do |property, value|
+    event.to_hash.each do |property, value|
       props[property] = value unless @@ignore_properties.has_key? property
     end
 
@@ -128,7 +128,7 @@ class LogStash::Outputs::Seq < LogStash::Outputs::Base
 
   private
   def get_level(event)
-    level = event['@level']
+    level = event.get('@level')
 
     level ? level : 'Verbose'
   end # def get_level
